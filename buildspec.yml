@@ -1,0 +1,10 @@
+version: 0.1
+phases:
+  install:
+    commands:
+      - aws cloudformation package --template-file lambda.yml --s3-bucket cfsambucketrad --output-template-file samTemplate.yaml
+artifacts:
+  type: zip
+  files:
+    - lambda.yml
+    - samTemplate.yaml
